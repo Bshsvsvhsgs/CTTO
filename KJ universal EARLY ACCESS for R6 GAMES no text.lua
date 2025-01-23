@@ -32,8 +32,8 @@ loadstring(game:HttpGet('https://pastebin.com/raw/0TLj8Ltq'))()
 
 loadstring(game:HttpGet("https://pastebin.com/raw/L5GxY86N"))()
 
---ultimate 2
-loadstring(game:HttpGet("https://pastebin.com/raw/sef7n6jL"))()
+--ultimate 2 no text
+loadstring(game:HttpGet("https://pastebin.com/raw/TLQ0Xzcd"))()
 
 
 
@@ -1914,11 +1914,29 @@ end)
 
 loadstring(game:HttpGet("https://pastebin.com/raw/0z7wfeYv"))()
 
+--five seasons
+-- Create the tool
+local tool = Instance.new("Tool")
+tool.Name = "5 seasons(unfinished)"
+tool.RequiresHandle = false  -- No handle needed
+tool.Parent = game.Players.LocalPlayer.Backpack
+
+-- Function to be called when the tool is activated
+tool.Activated:Connect(function()
+    -- Remove the tool from the player's backpack
+    tool.Parent = nil
+
+    -- Run the code from the pastebin
+    loadstring(game:HttpGet("https://pastebin.com/raw/UsQfvXHk"))()
 
 
--- unlimited flexworks animation and function
 
-loadstring(game:HttpGet("https://pastebin.com/raw/Emmc5vFj"))()
+    -- Wait for 2 seconds before returning the tool
+    wait(2)
 
---five season function
-loadstring(game:HttpGet("https://pastebin.com/raw/RpPy6h1P"))()
+    -- Return the tool to the player's backpack
+    tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+-- unlimited flexworks animation and function //five season function
+loadstring(game:HttpGet("https://pastebin.com/raw/EXTHhRtU"))()
