@@ -15,10 +15,25 @@ s.SoundId = "rbxassetid://10066921516"
 s:Play()
 s.Volume = 3
 
+-- Collateral destruction
 
---ultimate 2 no text
+loadstring(game:HttpGet("https://pastebin.com/raw/5wjzjGNJ"))()
 
-loadstring(game:HttpGet("https://pastebin.com/raw/TLQ0Xzcd"))()
+
+
+-- dropkick
+
+loadstring(game:HttpGet('https://pastebin.com/raw/0TLj8Ltq'))()
+
+
+
+--dash
+
+
+loadstring(game:HttpGet("https://pastebin.com/raw/L5GxY86N"))()
+
+--ultimate 2
+loadstring(game:HttpGet("https://pastebin.com/raw/sef7n6jL"))()
 
 
 
@@ -1396,113 +1411,7 @@ end)
 
 
 
--- dash tool
 
-
-
-
-
-
-
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-local tool = Instance.new("Tool")
-tool.Name = "Dash"
-tool.RequiresHandle = false
-tool.Parent = player.Backpack
-
-local fadeTime = 0.2 -- Fade time for animations
-local isDashing = false -- Flag to check if dash is currently active
-local isTeleporting = false -- Flag to control teleportation
-local activeAnimationTracks = {} -- To keep track of active animation tracks
-
--- Function to load and play an animation with fade time
-local function playAnimation(animationId, startTime, speed, stopDelay, loopCount)
-    local animation = Instance.new("Animation")
-    animation.AnimationId = "rbxassetid://" .. animationId
-    
-    local animationTrack = humanoid:LoadAnimation(animation)
-    animationTrack:Play(fadeTime) -- Apply fade-in time
-    animationTrack.TimePosition = startTime -- Start at specified time
-    animationTrack:AdjustSpeed(speed) -- Set animation speed
-
-    -- If loopCount is more than 1, we make it loop
-    if loopCount > 1 then
-        animationTrack.Looped = true
-    end
-    
-    -- Stop the animation after the specified delay with fade time
-    task.delay(stopDelay, function()
-        animationTrack:Stop(fadeTime) -- Apply fade-out time
-    end)
-
-    -- Add the animation track to the list of active animations
-    table.insert(activeAnimationTracks, animationTrack)
-
-    -- Return the duration of the animation to sync teleportation with its end time
-    return stopDelay
-end
-
--- Function to teleport player forward (with the ability to stop teleporting)
-local function teleportForward(duration)
-    local interval = 0.0001
-    local distancePerMove = 3
-    local startTime = tick() -- Get current time
-
-    isTeleporting = true -- Start teleportation
-
-    while tick() - startTime < duration and isTeleporting do
-        humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.new(0, 0, -distancePerMove)
-        wait(interval)
-    end
-
-    isTeleporting = false -- End teleportation
-end
-
--- Function to activate the dash (triggered when tool is equipped)
-local function activateDash()
-    if isDashing then
-        return -- Exit if dash is already active
-    end
-
-    isDashing = true -- Start the dash
-
-    -- Play animations with different behaviors and get the total duration from the last animation
-    local totalDuration = 0
-    totalDuration = playAnimation("56146409", 1, 0.0001, 9, 1) -- Play once
-    totalDuration = playAnimation("136801964", 3.4, 0.0001, 9, 1) -- Play once
-    totalDuration = playAnimation("100348530", 0, 4, 9, 5) -- Loop 5 times
-
-    -- Start teleportation after the last animation ends
-    teleportForward(totalDuration)
-end
-
--- Function to stop the dash (triggered when tool is unequipped)
-local function stopDash()
-    if isDashing then
-        -- Stop all active animations and teleportation
-        for _, animationTrack in ipairs(activeAnimationTracks) do
-            animationTrack:Stop(fadeTime) -- Stop animation with fade out
-        end
-        activeAnimationTracks = {} -- Clear the active animation tracks
-
-        -- Stop teleportation by setting the flag to false
-        isTeleporting = false
-        isDashing = false -- Reset dash state
-    end
-end
-
--- Connect the tool's Equipped event to activateDash
-tool.Equipped:Connect(function()
-    activateDash()
-end)
-
--- Connect the tool's Unequipped event to stopDash
-tool.Unequipped:Connect(function()
-    stopDash()
-end)
 
 
 
@@ -2001,12 +1910,15 @@ end)
 
 
 
--- crush
+-- lethal punches
 
 loadstring(game:HttpGet("https://pastebin.com/raw/0z7wfeYv"))()
 
 
 
--- unlimited flexworks animation and function 
+-- unlimited flexworks animation and function
 
-loadstring(game:HttpGet("https://pastebin.com/raw/3tCEqpDX"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/Emmc5vFj"))()
+
+--five season function
+loadstring(game:HttpGet("https://pastebin.com/raw/RpPy6h1P"))()
