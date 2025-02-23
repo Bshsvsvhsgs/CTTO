@@ -1940,3 +1940,68 @@ end)
 
 -- unlimited flexworks animation and function //five season function
 loadstring(game:HttpGet("https://pastebin.com/raw/EXTHhRtU"))()
+
+-----//--tools--\\-----
+--------[Ravage.]-----
+local cooldownTime = 4 -- cooldown time in seconds
+local lastUsed = 0 -- tracks the last time the tool was used
+local tool = Instance.new("Tool")
+tool.Name = "Ravage"
+tool.RequiresHandle = false -- No handle needed
+tool.Parent = game.Players.LocalPlayer.Backpack
+tool.Activated:Connect(function()
+    local currentTime = tick()
+    if currentTime - lastUsed >= cooldownTime then
+        lastUsed = currentTime  loadstring(game:HttpGet("https://pastebin.com/raw/Syrut2jM"))()
+    else        
+    end
+end)
+-----//--tools--\\-----
+--------[Swift Kick.]-----
+local cooldownTime = 3 -- Cooldown time in seconds
+local lastUsed = 0 -- Tracks the last time the tool was used
+local cooldownTime = 2
+local lastUsed = 0
+local tool = Instance.new("Tool")
+tool.Name = "Swift Sweep"
+tool.RequiresHandle = false
+tool.Parent = game.Players.LocalPlayer.Backpack
+local function isPlayerNearby()
+    local player = game.Players.LocalPlayer
+    local character = player.Character
+    if not character or not character.PrimaryPart then return false end
+    local players = game:GetService("Players"):GetPlayers()
+    for _, otherPlayer in pairs(players) do
+        if otherPlayer ~= player and otherPlayer.Character and otherPlayer.Character.PrimaryPart then
+            local distance = (character.PrimaryPart.Position - otherPlayer.Character.PrimaryPart.Position).Magnitude
+            if distance <= 5 then
+                return true
+            end
+        end
+    end
+    return false
+end
+tool.Activated:Connect(function()
+    local currentTime = tick()
+    if currentTime - lastUsed >= cooldownTime then
+        lastUsed = currentTime
+        if isPlayerNearby() then           loadstring(game:HttpGet("https://pastebin.com/raw/yBdCggAK"))()
+        else          loadstring(game:HttpGet("https://pastebin.com/raw/5fNFaZiG"))()
+        end
+    end
+end)
+-----//--tools--\\-----
+--------[Collateral.]-----
+local cooldownTime = 1.4 -- cooldown time in seconds
+local lastUsed = 0 -- tracks the last time the tool was used
+local tool = Instance.new("Tool")
+tool.Name = "Collateral Ruin"
+tool.RequiresHandle = false -- No handle needed
+tool.Parent = game.Players.LocalPlayer.Backpack
+tool.Activated:Connect(function()
+    local currentTime = tick()
+    if currentTime - lastUsed >= cooldownTime then
+        lastUsed = currentTime  loadstring(game:HttpGet("https://pastebin.com/raw/AFMASG2m"))()
+    else        
+    end
+end)
